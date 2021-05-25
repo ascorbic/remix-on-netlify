@@ -46,15 +46,18 @@ function createRemixRequest(req) {
     `http://${host}`
   );
   console.log(url.toString());
+  let body =
+    req.httpMethod === "get" || req.httpMethod === "head" || !req.body
+      ? undefined
+      : req.isBase64Encoded
+      ? Buffer.from(req.body, "base64").toString()
+      : req.body;
   return new Request(url.toString(), {
     method: req.httpMethod,
     headers: req.cookies
       ? { ...req.headers, Cookie: req.cookies.join(";") }
       : req.headers,
-    body:
-      req.body && req.isBase64Encoded
-        ? Buffer.from(req.body, "base64").toString()
-        : req.body,
+    body,
   });
 }
 
