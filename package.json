@@ -2,7 +2,7 @@
   "private": true,
   "name": "remix-on-netlify-template",
   "description": "",
-  "license": "",
+  "license": "MIT",
   "scripts": {
     "build": "remix build",
     "dev": "remix run",

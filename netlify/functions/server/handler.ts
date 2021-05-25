@@ -11,12 +11,11 @@ function createRemixRequest(req) {
   console.log({ req });
   const host = req.headers["x-forwarded-host"] || req.headers.host;
   const proto = req.headers["x-forwarded-proto"] || "http";
-
+  const query = stringify(req.multiValueQueryStringParameters);
   const url = new URL(
-    req.path + stringify(req.multiValueQueryStringParameters),
+    `${req.path}${query ? "?" : ""}${query}`,
     `${proto}://${host}`
   );
-
   let body;
   if (req.body && req.httpMethod !== "get" && req.httpMethod !== "head") {
     body = req.isBase64Encoded
