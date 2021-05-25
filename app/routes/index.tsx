@@ -28,6 +28,11 @@ export default function Index() {
         <a href="/two">Here's another page</a>
       </p>
       <p>Message from the loader: {data.message}</p>
+      <p>
+        <a href="https://github.com/ascorbic/remix-on-netlify/">
+          remix-on-netlify repo
+        </a>
+      </p>
     </div>
   );
 }
