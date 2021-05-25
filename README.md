@@ -1,59 +1,27 @@
-# Welcome to Remix!
+# Welcome to Remix on Netlify!
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/ascorbic/remix-on-netlify">![deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)</a>
 
 - [Remix Docs](https://docs.remix.run)
 - [Customer Dashboard](https://remix.run/dashboard)
 
-## Architect Setup
+## Setup
 
-When deploying to AWS Lambda with Architect, you'll need:
-
-- Architect (`arc`) CLI
-- AWS SDK
-
-Architect recommends installing these globally:
-
-```sh
-$ npm i -g @architect/architect aws-sdk
-```
+Set the environment variable `REMIX_TOKEN` to your licence key from the Remix dashboard. If your site repo is not public, you could edit `.npmrc` and hard-code the value, but be careful to not commit it to a public repo.
 
 ## Development
 
-You will be running two processes during development when using Architect as your server.
+To run the Remix dev server, run:
 
-- Your Architect server sandbox in one
-- The Remix development server in another
-
-```sh
-# in one tab
-$ arc sandbox
-
-# in another
+```
 $ npm run dev
+
 ```
 
-Open up [http://localhost:3333](http://localhost:3333) and you should be ready to go!
-
-If you'd rather run everything in a single tab, you can look at [concurrently](https://npm.im/concurrently) or similar tools to run both processes in one tab.
+Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
 ## Deploying
 
-Before you can deploy, you'll need to do some setup with AWS:
+In the Netlify dashboard, set the environment variable `REMIX_TOKEN` to your licence key from the Remix dashboard. Then when you deploy to Netlify, everything should work.
 
-- First [install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-- Then [follow the Architect setup instructions](https://arc.codes/docs/en/guides/get-started/detailed-aws-setup).
-
-If you make it through all of that, you're ready to deploy!
-
-1. build the app for production:
-
-   ```sh
-   $ npm run build
-   ```
-
-2. Deploy with `arc`
-
-   ```sh
-   $ arc deploy production
-   ```
-
-You're in business!
+Click to deploy a copy of this repo: <a href="https://app.netlify.com/start/deploy?repository=https://github.com/ascorbic/remix-on-netlify">![deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)</a>

@@ -1,12 +1,12 @@
 {
   "private": true,
-  "name": "remix-app-template",
+  "name": "remix-on-netlify-template",
   "description": "",
   "license": "",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev",
-    "serve": "remix-serve build"
+    "dev": "remix run",
+    "start": "remix-serve netlify/functions/server/build"
   },
   "dependencies": {
     "@remix-run/react": "^0.17.3",

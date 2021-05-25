@@ -6,3 +6,6 @@ framework="#custom"
 
 [functions]
     external_node_modules = ["@remix-run/react", "react", "react-dom"]
+
+[template.environment]
+  REMIX_TOKEN = "change me to your key from remix.run"
