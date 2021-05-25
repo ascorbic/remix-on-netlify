@@ -35,19 +35,10 @@ function createRemixRequest(req) {
   });
 }
 
-export function createRequestHandler({
-  build,
-  getLoadContext,
-  mode = process.env.NODE_ENV,
-}) {
+export function createRequestHandler({ build, mode = process.env.NODE_ENV }) {
   const handleRequest = createNodeRequestHandler(build, mode);
-
   return async (req) => {
-    const response = await handleRequest(
-      createRemixRequest(req),
-      getLoadContext?.(req)
-    );
-
+    const response = await handleRequest(createRemixRequest(req));
     return {
       statusCode: response.status,
       headers: Object.fromEntries(response.headers),
